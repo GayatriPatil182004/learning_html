@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - TechStore</title>
+</head>
+<body>
+
+<header>
+    <h1>💻 TechStore</h1>
+    <p>We Would Love to Hear From You!</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="service.html">Services</a> |
+    <a href="product.html">Products</a> |
+    <a href="contact.html">Contact</a>
+</nav>
+
+<hr>
+
+<main>
+
+    <section>
+        <h1>Get in Touch</h1>
+
+        <table width="100%" border="1" cellpadding="15">
+            <tr>
+                <td width="50%" valign="top">
+                    <article>
+                        <h2>Contact Information</h2>
+
+                        <p><strong>📧 Email:</strong>
+                        <a href="mailto:example@gmail.com">
+                        example@gmail.com</a></p>
+
+                        <p><strong>📞 Phone:</strong>
+                        <a href="tel:+919876543210">
+                        +91 98765 43210</a></p>
+
+                        <p><strong>📍 Location:</strong>
+                        Pune, Maharashtra, India</p>
+
+                        <p><strong>🕒 Working Hours:</strong>
+                        Monday to Saturday, 9 AM to 6 PM</p>
+                    </article>
+                </td>
+
+                <td width="50%" valign="top">
+                    <article>
+                        <h2>How Can We Help?</h2>
+                        <p>Contact us for product information,
+                        service enquiries or technical assistance.</p>
+
+                        <p><a href="product.html">Browse Products</a></p>
+                        <p><a href="service.html">Explore Services</a></p>
+                    </article>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Send Us an Enquiry</h2>
+        <p>Fill out the form below.</p>
+
+        <form action="#" method="get">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your name" required>
+                <br><br>
+
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+                <br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="Enter your phone number">
+                <br><br>
+
+                <label for="city">City:</label><br>
+                <input type="text" id="city" name="city"
+                       placeholder="Enter your city">
+                <br><br>
+
+                <label for="dob">Date of Birth:</label><br>
+                <input type="date" id="dob" name="dob">
+                <br><br>
+
+                <p>Gender:</p>
+
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>Enquiry Information</legend>
+
+                <label for="reason">Enquiry Type:</label><br>
+                <select id="reason" name="reason" required>
+                    <option value="">Choose an enquiry type</option>
+                    <option value="Product">Product Enquiry</option>
+                    <option value="Service">Service Enquiry</option>
+                    <option value="Support">Technical Support</option>
+                    <option value="Other">Other</option>
+                </select>
+                <br><br>
+
+                <label for="product">Interested Product:</label><br>
+                <select id="product" name="product">
+                    <option value="">Choose a product</option>
+                    <option value="Laptop">Laptop</option>
+                    <option value="Smartphone">Smartphone</option>
+                    <option value="Headphones">Headphones</option>
+                    <option value="Keyboard">Keyboard</option>
+                </select>
+                <br><br>
+
+               
+
+                <label for="message">Your Message:</label><br>
+                <textarea id="message" name="message"
+                          rows="5" cols="40"
+                          placeholder="Write your enquiry here"
+                          required></textarea>
+                <br><br>
+
+                <input type="checkbox" id="updates"
+                       name="updates" value="yes">
+                <label for="updates">
+                    I would like to receive updates.
+                </label>
+            </fieldset>
+
+            <br>
+
+            <button type="submit">Submit Enquiry</button>
+            <button type="reset">Clear Form</button>
+
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+            <summary>How can I ask about a product?</summary>
+            <p>Select Product Enquiry in the form and enter
+            your question.</p>
+        </details>
+
+        <details>
+            <summary>Can I enquire about services?</summary>
+            <p>Yes. Select Service Enquiry in the form.</p>
+        </details>
+
+        <details>
+            <summary>Does the form send an email?</summary>
+            <p>This HTML demonstration does not send messages
+            to a business. A backend or form service is needed.</p>
+        </details>
+    </section>
+
+</main>
+
+<footer>
+    <hr>
+    <p>&copy; 2026 TechStore. All rights reserved.</p>
+    <a href="index.html">Home</a> |
+    <a href="product.html">Products</a>
+</footer>
+
+</body>
+</html>
