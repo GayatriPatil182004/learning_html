@@ -1,0 +1,276 @@
+
+/* General styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #102a43;
+    color: white;
+    padding: 20px 6%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: #d9e8f5;
+}
+
+/* Search form */
+.search-box {
+    display: flex;
+    gap: 8px;
+}
+
+.search-box input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.search-box button {
+    padding: 10px 16px;
+    background-color: #ffb703;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #f4a900;
+}
+
+/* Navigation */
+nav {
+    background-color: #1d4567;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffb703;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 35px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* Welcome section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.hero-content,
+.hero-image {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero h2 {
+    text-align: left;
+    font-size: 36px;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    font-size: 17px;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Buttons and links */
+.primary-link {
+    display: inline-block;
+    background-color: #087e8b;
+    color: white;
+    padding: 12px 22px;
+    margin-top: 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.primary-link:hover {
+    background-color: #065f68;
+}
+
+/* Feature and product grids */
+.feature-grid,
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card,
+.product-card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card {
+    border-top: 4px solid #087e8b;
+}
+
+.feature-card h3,
+.product-card h3 {
+    margin-top: 10px;
+}
+
+/* Product images */
+.product-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.price {
+    color: #087e8b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-card a {
+    display: inline-block;
+    color: #087e8b;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.product-card a:hover {
+    text-decoration: underline;
+}
+
+/* FAQ */
+.faq {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+details {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #102a43;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #ffcf5c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        padding: 22px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .feature-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .feature-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box input {
+        width: 100%;
+        min-width: 0;
+    }
+}
