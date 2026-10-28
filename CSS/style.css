@@ -1,491 +1,883 @@
 
-/* General styling */
+/* =====================================
+   1. GLOBAL STYLES
+===================================== */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #5b4bdb;
+    --primary-dark: #4332b5;
+    --secondary: #8b5cf6;
+    --dark: #172033;
+    --text: #64748b;
+    --light: #f5f6ff;
+    --white: #ffffff;
+    --border: #e5e7f2;
+    --shadow: 0 10px 30px rgba(42, 36, 105, 0.09);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #222;
-    line-height: 1.6;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.7;
 }
 
-/* Header */
-header {
-    background-color: #102a43;
-    color: white;
-    padding: 20px 6%;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
-header p {
-    margin: 5px 0 0;
-    color: #d9e8f5;
-}
-
-/* Search form */
-.search-box {
-    display: flex;
-    gap: 8px;
-}
-
-.search-box input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
-}
-
-.search-box button {
-    padding: 10px 16px;
-    background-color: #ffb703;
-    border: none;
-    border-radius: 5px;
+button {
     cursor: pointer;
 }
 
-.search-box button:hover {
-    background-color: #f4a900;
+/* =====================================
+   2. HEADER AND NAVIGATION
+===================================== */
+
+header,
+.header {
+    background: var(--white);
+    padding: 18px 6%;
+    box-shadow: 0 3px 20px rgba(23, 32, 51, 0.07);
 }
 
-/* Navigation */
-nav {
-    background-color: #1d4567;
-    padding: 15px 6%;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+header h1,
+.logo {
+    color: var(--primary);
+    font-size: 27px;
+    font-weight: 800;
+}
+
+header p {
+    color: var(--text);
+}
+
+nav,
+.navbar {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 22px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+nav {
+    padding: 14px 6%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
 }
 
-nav a:hover {
-    color: #ffb703;
+nav a,
+.navbar a {
+    color: #475569;
+    font-weight: 600;
+    font-size: 15px;
 }
 
-/* Main content */
+nav a:hover,
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary);
+}
+
+.header-btn {
+    padding: 10px 18px;
+    border-radius: 9px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.header-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   3. MAIN CONTENT
+===================================== */
+
 main {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     margin: auto;
 }
 
 section {
-    padding: 35px 0;
+    padding: 55px 6%;
 }
 
-section h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 25px;
+h1,
+h2,
+h3 {
+    line-height: 1.3;
 }
 
-/* Welcome section */
+h2 {
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+.tagline {
+    display: inline-block;
+    padding: 6px 13px;
+    border-radius: 30px;
+    background: #eeebff;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* =====================================
+   4. HERO SECTION
+   Supports index.html and about.html
+===================================== */
+
 .hero {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    background-color: white;
-    padding: 35px;
-    border-radius: 12px;
+    gap: 45px;
+    padding: 75px 6%;
+    background:
+        radial-gradient(circle at 90% 10%, #e7e3ff, transparent 35%),
+        linear-gradient(135deg, #fafaff, #f3f4ff);
 }
 
-.hero-content,
-.hero-image {
-    flex: 1;
+.hero-content {
     min-width: 0;
 }
 
-.hero h2 {
-    text-align: left;
-    font-size: 36px;
-    margin: 0 0 15px;
+.hero-content h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    margin: 15px 0 20px;
+    letter-spacing: -1px;
 }
 
-.hero p {
-    font-size: 17px;
+.hero-content h1 span {
+    color: var(--primary);
 }
 
-.hero img {
+.hero-content p {
+    color: var(--text);
+    max-width: 600px;
+}
+
+.hero-image {
+    min-width: 0;
+}
+
+.hero-image img {
     width: 100%;
-    max-width: 450px;
-    display: block;
-    margin: auto;
-    border-radius: 10px;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
-/* Buttons and links */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.image-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.image-label > span {
+    font-size: 25px;
+}
+
+.image-label p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* =====================================
+   5. BUTTONS AND LINKS
+===================================== */
+
+.btn,
 .primary-link {
     display: inline-block;
-    background-color: #087e8b;
-    color: white;
-    padding: 12px 22px;
-    margin-top: 12px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
+    padding: 12px 21px;
+    border-radius: 9px;
+    background: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    border: 1px solid transparent;
 }
 
+.btn:hover,
 .primary-link:hover {
-    background-color: #065f68;
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-3px);
 }
 
-/* Feature and product grids */
-.feature-grid,
-.product-grid {
+.secondary-btn {
+    background: var(--white);
+    color: var(--primary);
+    border-color: #d9d4ff;
+}
+
+.secondary-btn:hover {
+    background: #eeebff;
+    color: var(--primary-dark);
+}
+
+.primary-link {
+    margin-top: 12px;
+}
+
+/* =====================================
+   6. HOMEPAGE FEATURE CARDS
+===================================== */
+
+.feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.feature-card,
-.product-card {
-    background-color: white;
-    padding: 22px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    gap: 24px;
+    margin-top: 25px;
 }
 
 .feature-card {
-    border-top: 4px solid #087e8b;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(23, 32, 51, 0.04);
+    transition: 0.3s ease;
 }
 
-.feature-card h3,
-.product-card h3 {
-    margin-top: 10px;
+.feature-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+    border-color: #c8c0ff;
 }
 
-/* Product images */
+.feature-card h3 {
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.feature-card p {
+    color: var(--text);
+}
+
+/* =====================================
+   7. PRODUCT CARDS
+===================================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.product-card {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    box-shadow: 0 5px 20px rgba(23, 32, 51, 0.05);
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
 .product-card img {
     width: 100%;
-    height: 190px;
-    object-fit: contain;
-    border-radius: 6px;
+    height: 220px;
+    object-fit: cover;
+    background: var(--light);
 }
 
+.product-card h3 {
+    padding: 18px 18px 5px;
+}
+
+.product-card p {
+    padding: 0 18px;
+    color: var(--text);
+}
+
+.product-card .price,
 .price {
-    color: #087e8b;
+    display: block;
+    padding: 8px 18px;
+    color: var(--primary);
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .product-card a {
-    display: inline-block;
-    color: #087e8b;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 8px;
+    margin: 8px 18px 20px;
 }
 
-.product-card a:hover {
-    text-decoration: underline;
+/* =====================================
+   8. ABOUT PAGE
+===================================== */
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
 }
 
-/* FAQ */
-.faq {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+.stat h2 {
+    color: var(--primary);
+    font-size: 19px;
+    margin: 0;
+}
+
+.stat p {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(27px, 3vw, 38px);
+    margin: 15px 0;
+}
+
+.section-heading h2 span {
+    color: var(--primary);
+}
+
+.section-heading p {
+    color: var(--text);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.about-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(23, 32, 51, 0.04);
+    transition: 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.about-card h3 {
+    margin: 15px 0 10px;
+}
+
+.about-card p {
+    color: var(--text);
+}
+
+.card-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    background: #eeebff;
+    font-size: 27px;
+}
+
+/* About page: mission, vision and benefits
+   Also supports the earlier table-based HTML. */
+
+.info-card,
+.why-card {
+    padding: 25px;
+    border-radius: 15px;
+    background: var(--light);
+    border: 1px solid var(--border);
+}
+
+.mission-vision,
+.why-us {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.why-us {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.why-card h3,
+.info-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.why-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 50px;
+    background: var(--light);
+}
+
+.why-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.why-content h2 {
+    font-size: clamp(28px, 3vw, 38px);
+    margin: 15px 0;
+}
+
+.why-content h2 span {
+    color: var(--primary);
+}
+
+.why-content > p {
+    color: var(--text);
+}
+
+.benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.benefit > span {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #16834a;
+    background: #e2f8eb;
+    font-weight: 800;
+}
+
+.benefit h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.benefit p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* Core values */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.value-card {
+    padding: 25px 18px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.value-card > span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* =====================================
+   9. FAQ AND DETAILS
+===================================== */
+
+.faq,
+.faq-list {
+    max-width: 850px;
+    margin: 25px auto;
 }
 
 details {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+    margin: 14px 0;
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    transition: 0.3s ease;
+}
+
+details:hover,
+details[open] {
+    border-color: #bdb4ff;
+    box-shadow: 0 5px 18px rgba(91, 75, 219, 0.07);
 }
 
 summary {
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--dark);
 }
 
-/* Footer */
-footer {
-    background-color: #102a43;
-    color: white;
+details p {
+    color: var(--text);
+    padding-top: 12px;
+    margin-bottom: 0;
+}
+
+/* =====================================
+   10. CALL TO ACTION
+===================================== */
+
+.cta-section {
+    margin: 55px 6%;
+    padding: 50px 25px;
     text-align: center;
-    padding: 25px;
-    margin-top: 30px;
+    color: var(--white);
+    border-radius: 20px;
+    background: linear-gradient(120deg, #5141cc, #8b5cf6);
 }
 
-footer a {
-    color: #ffcf5c;
-    text-decoration: none;
+.cta-section h2 {
+    font-size: clamp(25px, 3vw, 36px);
 }
 
-footer a:hover {
-    text-decoration: underline;
+.cta-section p {
+    color: #eeeaff;
+    margin: 12px 0 22px;
 }
 
-/* Responsive design */
-@media (max-width: 700px) {
-    .hero {
-        flex-direction: column;
-        padding: 22px;
+.cta-btn {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.cta-btn:hover {
+    background: #eeebff;
+    color: var(--primary-dark);
+}
+
+/* =====================================
+   11. TABLES
+   Supports older table-based About HTML
+===================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+td,
+th {
+    padding: 15px;
+    vertical-align: top;
+}
+
+td img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+td h3 {
+    margin-bottom: 10px;
+}
+
+td p {
+    color: var(--text);
+}
+
+/* =====================================
+   12. FORMS
+===================================== */
+
+input,
+textarea,
+select {
+    max-width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d7dbea;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(91, 75, 219, 0.12);
+}
+
+input[type="submit"],
+button[type="submit"] {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background: var(--primary-dark);
+}
+
+/* =====================================
+   13. FOOTER
+===================================== */
+
+footer,
+.footer {
+    padding: 35px 6%;
+    background: #15182b;
+    color: var(--white);
+}
+
+footer p,
+.footer p {
+    color: #c1c5d4;
+    font-size: 14px;
+}
+
+footer a,
+.footer-links a {
+    color: #e0e2ef;
+    margin-right: 14px;
+}
+
+footer a:hover,
+.footer-links a:hover {
+    color: #bdb4ff;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer h2 {
+    color: #bdb4ff;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-links a {
+    margin-right: 0;
+}
+
+.copyright {
+    width: 100%;
+    padding-top: 18px;
+    margin-top: 8px;
+    border-top: 1px solid #34374a;
+    text-align: center;
+}
+
+/* =====================================
+   14. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1000px) {
+    .hero,
+    .why-section {
+        grid-template-columns: 1fr;
     }
 
-    .hero h2 {
-        font-size: 28px;
+    .hero {
+        gap: 35px;
+    }
+
+    .hero-image,
+    .why-image {
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
     }
 
     .feature-grid,
-    .product-grid {
+    .product-grid,
+    .about-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .header-content {
+    .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header {
+        justify-content: center;
+    }
+
+    .why-us {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    header,
+    .header {
+        padding: 18px 5%;
+    }
+
+    nav,
+    .navbar {
+        gap: 12px 16px;
+    }
+
+    nav {
+        padding: 15px 5%;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    section,
+    .about-section,
+    .values-section,
+    .faq-section {
+        padding: 40px 5%;
+    }
+
+    .hero {
+        padding: 45px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .feature-grid,
+    .product-grid,
+    .about-grid,
+    .mission-vision,
+    .why-us,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-image img {
+        height: 300px;
+    }
+
+    .stats {
+        gap: 16px;
+    }
+
+    .feature-card,
+    .product-card,
+    .about-card {
+        width: 100%;
+    }
+
+    .cta-section {
+        margin: 35px 5%;
+        padding: 35px 18px;
+    }
+
+    .footer {
+        padding: 30px 5%;
         flex-direction: column;
         align-items: flex-start;
     }
 
-    nav {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 450px) {
-    .feature-grid,
-    .product-grid {
-        grid-template-columns: 1fr;
+    .copyright {
+        text-align: left;
     }
 
-    .search-box input {
-        width: 100%;
-        min-width: 0;
-    }
-}
-
-/* General Styling */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #222;
-    line-height: 1.6;
-}
-
-/* Header */
-header {
-    background-color: #102a43;
-    color: white;
-    padding: 20px 6%;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 32px;
-}
-
-header p {
-    color: #d9e8f5;
-    margin-bottom: 0;
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #1d4567;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ffb703;
-}
-
-/* Main Content */
-main {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-section {
-    padding: 35px 0;
-}
-
-section h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 25px;
-}
-
-/* Company Introduction */
-.about-intro {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.about-text,
-.about-image {
-    flex: 1;
-    min-width: 0;
-}
-
-.about-text h2 {
-    text-align: left;
-    font-size: 32px;
-    color: #102a43;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 500px;
-    display: block;
-    margin: auto;
-    border-radius: 10px;
-}
-
-/* Mission and Vision */
-.mission-vision {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.info-card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    border-top: 4px solid #087e8b;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
-.info-card h3 {
-    color: #087e8b;
-    margin-top: 0;
-}
-
-/* Why Choose Us */
-.why-us {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.why-card {
-    background-color: white;
-    padding: 22px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
-.why-card h3 {
-    color: #087e8b;
-}
-
-/* FAQ */
-.faq {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-details {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-summary {
-    cursor: pointer;
-    font-weight: bold;
-}
-
-details p {
-    color: #555;
-}
-
-/* Links */
-a {
-    transition: color 0.2s ease;
-}
-
-.about-text a {
-    display: inline-block;
-    background-color: #087e8b;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.about-text a:hover {
-    background-color: #065f68;
-}
-
-/* Footer */
-footer {
-    background-color: #102a43;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-}
-
-footer a {
-    color: #ffcf5c;
-    text-decoration: none;
-}
-
-/* Responsive Design */
-@media (max-width: 700px) {
-    .about-intro {
-        flex-direction: column;
-        padding: 20px;
+    table,
+    tbody,
+    tr,
+    td {
+        max-width: 100%;
     }
 
-    .mission-vision {
-        grid-template-columns: 1fr;
-    }
-
-    .why-us {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    nav {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 450px) {
-    .why-us {
-        grid-template-columns: 1fr;
+    td {
+        padding: 8px;
     }
 }
