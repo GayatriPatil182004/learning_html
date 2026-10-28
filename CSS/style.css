@@ -274,3 +274,218 @@ footer a:hover {
         min-width: 0;
     }
 }
+
+/* General Styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #102a43;
+    color: white;
+    padding: 20px 6%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    color: #d9e8f5;
+    margin-bottom: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #1d4567;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffb703;
+}
+
+/* Main Content */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 35px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* Company Introduction */
+.about-intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.about-text,
+.about-image {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-text h2 {
+    text-align: left;
+    font-size: 32px;
+    color: #102a43;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Mission and Vision */
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid #087e8b;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.info-card h3 {
+    color: #087e8b;
+    margin-top: 0;
+}
+
+/* Why Choose Us */
+.why-us {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.why-card {
+    background-color: white;
+    padding: 22px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.why-card h3 {
+    color: #087e8b;
+}
+
+/* FAQ */
+.faq {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+details {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details p {
+    color: #555;
+}
+
+/* Links */
+a {
+    transition: color 0.2s ease;
+}
+
+.about-text a {
+    display: inline-block;
+    background-color: #087e8b;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.about-text a:hover {
+    background-color: #065f68;
+}
+
+/* Footer */
+footer {
+    background-color: #102a43;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #ffcf5c;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .about-intro {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .why-us {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 450px) {
+    .why-us {
+        grid-template-columns: 1fr;
+    }
+}
